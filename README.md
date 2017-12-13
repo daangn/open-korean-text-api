@@ -45,3 +45,19 @@ jar 파일을 배포할 곳에 위치시킨 후 `java -jar {File name}` 을 수�
 정규화 | https://open-korean-text.herokuapp.com/normalize?text=오픈코리안텍스트
 토큰화 | https://open-korean-text.herokuapp.com/tokenize?text=오픈코리안텍스트
 어구 추출 | https://open-korean-text.herokuapp.com/extractPhrases?text=오픈코리안텍스트
+
+## Docker
+Docker 이미지 만들기
+```
+git clone https://github.com/n42corp/open-korean-text-api
+cd open-korean-text-api
+docker build . -t open-korean-text-api
+```
+Docker 실행
+```
+docker run --rm -it -p 4567:4567 open-korean-text-api
+```
+브라우저 확인
+```
+open http://0.0.0.0:4567/tokenize?text=오픈코리안텍스트
+```
